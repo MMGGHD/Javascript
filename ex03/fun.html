@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // JS에서는 함수가 클래스안에 감싸져 있지 않기에 메서드라고 부르지않는다.
+        // JS에서는 함수도 1급 객체 (변수에 담을수 있는 요소.)
+
+        // 자바스크립트 5버전 이하 < 함수에 이름이 있다
+        function fun01(n1, n2) {
+            return n1 + n2;
+        }
+        let add01 = fun01(1, 2);
+
+        // 자바스크립트 6버전 이상 < 함수에 이름이 없어짐 (익명함수)
+        let fun02 = function (n1, n2) {
+            return n1 + n2;
+        }
+        let add02 = fun02(1, 2);
+
+        // 함수 정의(function) 키워드도 없어짐 (람다함수)
+        let fun03 = (n1, n2) => {
+            return n1 + n2;
+        }
+        let add03 = fun03(1, 2);
+
+        // return 키워드도 없어짐
+        let fun04 = (n1, n2) => n1 + n2;
+        let add04 = fun04(1, 2);
+
+    </script>
+</body>
+
+</html>

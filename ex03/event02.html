@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .col {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="none()">none</button>
+    <button onclick="hide()">hidden</button>
+    <button onclick="on()">block</button>
+    <button onclick="expose()">visible</button>
+    <div id="outer" class="box">외부박스 상단
+        <div id="inner1" class="box">내부박스1</div>
+        <div id="inner2" class="box">내부박스2</div>
+        외부박스 하단
+    </div>
+    <button onclick="addAppend()">append</button>
+    <button onclick="addPrePend()">prepend</button>
+    <button onclick="addBefore()">before</button>
+    <button onclick="addAfter()">after</button><br>
+    <button onclick="appendDel()">append 삭제</button>
+    <button onclick="PrePendDel()">prepend 삭제</button><br>
+    <button onclick="BeforeDel()">before 삭제</button>
+    <button onclick="AfterDel()">after 삭제</button>
+    <script>
+
+        function none() {
+            console.log('display 버튼 onclick');
+            let none = document.querySelector('#inner1');
+            none.style.display = "none";
+            console.log('내부박스1 none');
+        }
+        function hide() {
+            console.log('visible 버튼 onclick');
+            let hidden = document.querySelector('#inner2');
+            hidden.style.visibility = "hidden";
+            console.log('내부박스2 hidden');
+        }
+
+        function on() {
+            console.log('display 버튼 onkeydown');
+            let on = document.querySelector('#inner1');
+            on.style.display = "block";
+            console.log('내부박스1 block');
+        }
+
+        function expose() {
+            console.log('visible 버튼 onkeydown');
+            let expose = document.querySelector('#inner2');
+            expose.style.visibility = "visible";
+            console.log('내부박스2 visible');
+        }
+
+        function addAppend() {
+            let newEl = document.createElement("div");
+            newEl.setAttribute("class", "box");
+            newEl.setAttribute("id", "inner3");
+            newEl.innerHTML = "Append박스";
+
+            let el = document.querySelector('#outer');
+            el.append(newEl);
+        }
+        function addPrePend() {
+            let newEl = document.createElement("div");
+            newEl.setAttribute("class", "box");
+            newEl.setAttribute("id", "inner4");
+            newEl.innerHTML = "Prepend박스";
+
+            let el = document.querySelector('#outer');
+            el.prepend(newEl);
+        }
+        function addBefore() {
+            let newEl = document.createElement("div");
+            newEl.setAttribute("class", "box");
+            newEl.setAttribute("id", "outer1");
+            newEl.innerHTML = "Before박스";
+
+            let el = document.querySelector('#outer');
+            el.before(newEl);
+
+        }
+        function addAfter() {
+            let newEl = document.createElement("div");
+            newEl.setAttribute("class", "box");
+            newEl.setAttribute("id", "outer2");
+            newEl.innerHTML = "After박스";
+
+            let el = document.querySelector('#outer');
+            el.after(newEl);
+        }
+
+        function appendDel() {
+            let el = document.querySelector('#inner3')
+            el.remove();
+        }
+        function PrePendDel() {
+            let el = document.querySelector('#inner4')
+            el.remove();
+        }
+        function BeforeDel() {
+            let el = document.querySelector('#outer1')
+            el.remove();
+        }
+        function AfterDel() {
+            let el = document.querySelector('#outer2')
+            el.remove();
+        }
+    </script>
+</body>
+
+</html>

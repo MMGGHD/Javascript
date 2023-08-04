@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>history02</h1>
+    <button onclick="back()">뒤로가기</button>
+    <script>
+        function back() {
+            // location.href = "/ex02/history01.html"; << 이 함수는 '뒤로가기'가 아니다.
+            // 이전페이지의 정보를 가지고 있지 않기 때문
+            // history.back(); << 함수는 이전페이지의 정보를 history객체에 저장하고있다.
+            history.back();
+        }
+    </script>
+</body>
+
+</html>

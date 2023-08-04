@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="alert('클릭됨')">클릭</button><br>
+    <button ondblclick="alert('더블클릭됨')">더블클릭</button><br>
+    <button onmousedown="alert('버튼눌려짐')">버튼누를때</button><br>
+    <button onmouseup="alert('버튼떼어짐')">버튼떼질때</button><br>
+    <button onmousemove="alert('커서움직임')">커서움직일때</button><br>
+    <button onmouseover="alert('커서올라감')">커서올라갈때</button><br>
+    <button onmouseout="alert('커서벗어남')">커서벗어날때</button><br>
+    <input type="text" id="keydown" placeholder="키보드누를때"><br>
+    <input type="text" id="keyup" placeholder="키보드키뗄때"><br>
+    <input type="text" id="change" placeholder="값이변경될때"><br>
+    <form action="/ex03/load.html" onsubmit="alert('폼 제출됨')">
+        <input type="text" placeholder="폼을제출할때">
+        <button type="submit">폼을제출할때</button>
+    </form>
+    <button onload="alert('로딩됨')"><a href="/ex03/event01.html">로딩되었을때</a></button> ← 작동하지 않습니다
+
+
+
+    <script>
+        let keydown = document.querySelector('#keydown');
+        let keyup = document.querySelector('#keyup');
+        let change = document.querySelector('#change');
+        keydown.addEventListener("keydown", function down() { alert('키보드눌러짐') });
+        keyup.addEventListener("keyup", () => { alert('키보드떼어짐') });
+        change.addEventListener("change", () => alert('값이변경됨'));
+    </script>
+</body>
+
+</html>

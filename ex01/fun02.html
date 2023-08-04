@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 버튼 등을 이용해서 이벤트를 받을 요소를 만든다.
+    2. 요소의 이벤트를 설정한다.
+    3. 만든 이벤트로 함수를 호출한다.
+    4.  -->
+    <h1>숨기기 이벤트</h1>
+    <hr />
+    <button onclick="hide1()">display로 숨기기</button>
+    <button onclick="hide2()">visible로 숨기기</button>
+    <div class="box">
+        <div id="b1" class="box">내부박스1</div>
+        <div id="b2" class="box">내부박스2</div>
+    </div>
+
+
+    <script>
+        // document.querySelector() << document(body 부분제어), querySelector()(원하는 태그 찾아줌)
+        // id 값은 #id명, class 값은 .class명 
+        function hide1() {
+            let e1 = document.querySelector.querySelector("#b1");
+            e1.style.display = "none";
+        }
+        function hide2() {
+
+            let e2 = document.querySelector("#b2");
+            e2.style.visibility = "hidden";
+        }
+    </script>
+</body>
+
+</html>

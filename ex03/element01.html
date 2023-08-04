@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>box1</div>
+    <div>box2</div>
+    <div class="red-text">box3</div>
+    <div class="red-text">box4</div>
+    <div id="box5">box5</div>
+    <hr />
+    <div id="err"></div>
+    <hr />
+
+    <!-- 태그를 찾아서 태그의 글자를 바꾸기 -->
+    <button onclick="tagChange()">태그찾기</button>
+    <!-- 클래스를 찾아서 클래스를 글자를 바꾸기 -->
+    <button onclick="classChange()">클래스찾기</button>
+    <!-- 아이디를 찾아서 아이디를 글자를 바꾸기 -->
+    <button onclick="idChange()">아이디찾기</button>
+    <button onclick="err()">에러</button>
+
+
+    <script>
+        // textContent << 요소 내용을 바꾸는 메서드, 하지만 태그 자체를 바꿀수 없다
+        // innerHTML << Html 태그 자체를 바꿀수 있다.
+        function err() {
+            let errEl = document.querySelector("#err");
+            console.log(errEl)
+            errEl.innerHTML = "아이디 혹은 비밀번호를 잘못적음"
+        }
+
+        function tagChange() {
+            let tagEl = document.querySelectorAll("div");
+            console.log(tagEl);
+            tagEl[0].innerHTML = "<h1>div 내용변경</h1>";
+            tagEl[1].textContent = "<h1>div 내용변경<h1>";
+            tagEl[2].innerHTML = "div 내용변경";
+            tagEl[3].textContent = "div 내용변경";
+            tagEl[4].textContent = "div 내용변경";
+        }
+
+        // 클래스 내용을 바꾸는 메서드
+        function classChange() {
+            let classEl = document.querySelectorAll(".red-text");
+            console.log(classEl);
+            classEl[0].innerHTML = "<h1>class 내용변경</h1>";
+            classEl[1].textContent = "class 내용변경";
+        }
+        // 아이디 내용을 바꾸는 메서드
+        function idChange() {
+            let idEl = document.querySelector("#box5");
+            console.log(idEl);
+            idEl.textContent = "id 내용변경";
+        }
+    </script>
+</body>
+
+</html>

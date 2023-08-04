@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border: 1px solid black;
+            padding: 10px
+        }
+
+        .card {
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="render()">render</button>
+    <button onclick="delAll()">전체삭제</button>
+    <div id="outer" class="box">
+    </div>
+
+    <script>
+        let startNum = 1;
+        function render() {
+            console.log('render 메서드 실행');
+            num = parseInt(window.prompt("만들 Card갯수를 입력하세요"));
+            console.log('num : ' + num);
+            let el = document.querySelector('#outer');
+            let newEl = document.createElement("div");
+            for (let i = startNum; i < num + startNum; i++) {
+                el.prepend(makeCard(i));
+            }
+            startNum = startNum + num;
+            console.log('startNum : ' + startNum);
+        }
+
+        function makeCard(id) {
+            let card = document.createElement("div");
+            card.setAttribute("class", "card");
+            card.setAttribute("id", "card-" + id);
+            card.innerHTML = `
+                    <h3>제목${id}입니다</h3> 
+                    <p> 제목${id} 입니다</p> 
+                    <button onclick="del(${id})">삭제</button>
+                    `;
+            return card;
+        }
+        function del(id) {
+            let el = document.querySelector('#card-' + id);
+            el.remove();
+        }
+
+        function delAll() {
+            let el = document.querySelectorAll('.card');
+            el.forEach(card => { card.remove() })
+        }
+
+    </script>
+</body>
+
+</html>
