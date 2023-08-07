@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- setTimeOut 배우기 -->
+<!-- setTimeOut 만들고 마우스 올려서 인수 확인하기 -->
+
+<body>
+    <script>
+        // 5초간격 순서대로 실행하려면 다음과 같이 설계한다. (setTimeOut내부에 setTimeOut를 작성)
+        // 복잡해지기 때문에 JS에서 Promise객체를 지원한다
+        setTimeout(() => {
+            console.log("실행 1");
+            setTimeout(() => {
+                console.log("실행 2");
+                setTimeout(() => {
+                    console.log("실행 3");
+                }, 5000);
+            }, 5000);
+
+        }, 5000);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

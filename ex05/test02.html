@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Promise 객체 사용법
+        // Promise(a,b) 에서 a, b는 함수를 담은 변수
+        // a를 호출하면 (.then())실행, b를 호출하면 (.catch())실행(실패)
+        // 여기서 then(), catch()의 매개변수를 선언해서 a, b의 내용을 받을수 있다.
+        let promise = new Promise((success, fail) => {
+            setTimeout(() => {
+                console.log("실행1");
+                success();
+            }, 5000);
+        }).then(() => {
+            setTimeout(() => {
+                console.log("실행2");
+            }, 5000);
+        }).catch(() => {
+            setTimeout(() => {
+                console.log("오류");
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
